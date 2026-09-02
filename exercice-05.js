@@ -14,11 +14,9 @@ produit.prix = produit.prix * 1.1;
 console.log(`Nouveau prix : ${produit.prix}`);
 
 produit.enPromotion = false;
-
 for (let cle in produit) {
     console.log(`${cle} : ${produit[cle]}`);
 }
-
 function estDisponible(produit) {
     return produit.stock > 0;
 }
