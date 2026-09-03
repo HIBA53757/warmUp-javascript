@@ -20,8 +20,8 @@ function calculerCommande(montant, statut) {
 
     } else if (montant >= 1000) {
         porsantageremise = 15
-    }
-
+    } 
+    
     if (statut === "premium") {
         porsantageremise += 5;
     }
