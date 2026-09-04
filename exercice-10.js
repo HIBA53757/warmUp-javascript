@@ -13,14 +13,12 @@ function genererRapport(ventes) {
         return total + vente.montant;
     }, 0);
 
-
     const meilleureVente = ventes.reduce((meilleure, vente) => {
         if (vente.montant > meilleure.montant) {
             return vente;
         }
         return meilleure;
     });
-
 
     const caParVendeur = ventes.reduce((ca, vente) => {
 
@@ -35,20 +33,16 @@ function genererRapport(ventes) {
 
 
     const vendeurs = Object.values(caParVendeur);
-
     const moyenne = vendeurs.reduce((total, ca) => {
         return total + ca;
     }, 0) / vendeurs.length;
-
-
 
 
     const vendeursAuDessus = Object.keys(caParVendeur).filter(vendeur => {
         return caParVendeur[vendeur] > moyenne;
     });
 
-
-    let rapport = "=== RAPPORT DES VENTES ===\n";
+    let rapport = "\n";
     rapport += `Chiffre d'affaires total : ${caTotal} DH\n`;
     rapport += `Meilleure vente : ${meilleureVente.produit} (${meilleureVente.vendeur}) - ${meilleureVente.montant} DH\n`;
     rapport += "CA par vendeur :\n";
